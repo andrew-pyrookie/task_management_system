@@ -1,0 +1,635 @@
+.task-page {
+  display: flex;
+  justify-content: space-between;
+  height: calc(100vh - 40px);
+}
+
+/* App.css */
+
+.task-form-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  z-index: 1000; /* Ensure it's on top of other content */
+  width: 300px; /* Adjust as needed */
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.close-button:hover {
+  color: red; /* Change color on hover */
+}
+
+/* Other styles remain unchanged */
+
+
+.left-column {
+  width: 200px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.center-column {
+  flex: 3; /* Increase the flex-grow for the center column */
+  margin: 0 10px; /* Space between left and right columns */
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.right-column {
+  width: 100px; /* Slightly larger than the left column */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.task-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.task-table th,
+.task-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.task-table th {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.task-table tr {
+  border-bottom: 1px solid transparent; /* No visible lines */
+}
+
+.task-table tr:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.task-table tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.filter-options {
+  margin: 10px 0;
+}
+
+.task-details {
+  margin-top: 20px;
+}
+
+button {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(54, 69, 79);
+}
+
+/* taskCalendar */
+/* App.css */
+.task-calendar .react-calendar__tile--active {
+  background-color: #6fa3ef;
+  color: white;
+}
+.task-calendar .react-calendar__tile span[role="img"] {
+  font-size: 1.2rem;
+  color: #FF5733; /* Customize task indicator color */
+}
+
+/* Search And Filter */
+/* App.css */
+.search-results-page input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+}
+
+.filter-options select {
+  margin-right: 8px;
+  padding: 4px;
+}
+
+.results-list .result-item {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+/* projectlist */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.modal-content button {
+  margin-top: 10px;
+}
+
+/* Dashboard Styling */
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+  position: relative; /* Make the dashboard a positioned container */
+  overflow: hidden; /* Prevent overflow for the overlay */
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('./assets/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  filter: blur(8px);
+  z-index: 0; /* Set below other content */
+}
+
+.left-column {
+  width: 200px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 40px);
+  z-index: 1; /* Set above the background overlay */
+}
+
+.left-column h1 {
+  text-align: center;
+}
+
+.left-column ul {
+  list-style: none;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.left-column li {
+  margin: 15px 0;
+  list-style: none;
+}
+
+.left-column li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.left-column li a i {
+  margin-right: 10px;
+}
+
+.left-column li a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.left-column .settings {
+  margin-top: auto;
+  margin-bottom: 20px; /* Space from the bottom */
+}
+
+.left-column .active {
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+}
+
+
+.right-column {
+  flex-grow: 1;
+  padding: 20px;
+  z-index: 1; /* Set above the background overlay */
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.header-row h2 {
+  margin: 0;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 35px;
+}
+
+.header-buttons .create-button {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1.1rem; /* Slightly larger font */
+}
+
+.header-buttons .create-button span {
+  margin-left: 8px;
+}
+
+.header-buttons .create-button:hover {
+  background-color: #333;
+}
+
+.header-buttons .icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px; /* Increased size for icon buttons */
+  height: 45px; /* Increased size for icon buttons */
+  background-color: #eeeeee; /* Cream background color */
+  color: black;
+  border-radius: 50%;
+  border: 2px solid #eeeeee; /* Slight border for a more distinct look */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1.5rem; /* Larger icons */
+}
+
+.header-buttons .icon-button:hover {
+  background-color: #999999;
+}
+
+.header-buttons .icon-button.active {
+  color: red; /* For active notifications */
+}
+
+.user-profile-pic {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-profile-pic {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.main-content {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 15px;
+  flex: 1;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover effect for cards */
+.card:hover {
+  transform: translateY(-5px); /* Moves the card slightly up */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Increases shadow */
+}
+
+.card h2 {
+  margin: 0 0 10px;
+}
+
+/* Styling for overdue-centered to center the single card in its row */
+.overdue-centered {
+  margin: 0 auto; /* Centers the single overdue tasks card */
+  max-width: 300px; /* Optional: Limit width for better aesthetics */
+}
+
+/* Additional styling for balanced spacing */
+.row:last-child .card {
+  flex: 1; /* Ensures cards fill the row evenly in the last row */
+}
+
+/* General adjustments for smaller screens */
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column; /* Stack columns vertically */
+  }
+
+  .left-column {
+    width: 100%; /* Full width for smaller screens */
+    height: auto; /* Allow height to adjust */
+    padding: 10px; /* Reduce padding */
+  }
+
+  .right-column {
+    padding: 10px; /* Reduce padding */
+  }
+
+  .header-buttons {
+    gap: 15px; /* Reduce space between buttons */
+  }
+
+  .header-buttons .create-button {
+    font-size: 1rem; /* Adjust button size */
+  }
+
+  .row {
+    flex-direction: column; /* Stack cards vertically */
+  }
+
+  .card {
+    margin-bottom: 15px; /* Add spacing between stacked cards */
+  }
+
+  .overdue-centered {
+    max-width: 100%; /* Full width for overdue card */
+  }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+  .left-column {
+    padding: 5px; /* Further reduce padding */
+  }
+
+  .header-row {
+    flex-direction: column; /* Stack header elements vertically */
+    align-items: flex-start; /* Align left */
+  }
+
+  .header-buttons {
+    flex-wrap: wrap; /* Allow buttons to wrap */
+    gap: 10px; /* Reduce gap between buttons */
+  }
+
+  .header-buttons .icon-button {
+    width: 40px; /* Smaller icons */
+    height: 40px; /* Smaller icons */
+    font-size: 1.2rem; /* Adjust icon size */
+  }
+
+  .create-button {
+    width: 100%; /* Full width for create button */
+    margin-top: 10px; /* Add space above */
+  }
+
+  .main-content {
+    margin-top: 10px; /* Adjust margin */
+  }
+
+  .row {
+    flex-direction: column; /* Stack rows vertically */
+  }
+
+  .card {
+    padding: 10px; /* Adjust card padding */
+  }
+
+  .card h2 {
+    font-size: 1.2rem; /* Adjust heading size */
+  }
+}
+
+
+/* Common Styles */
+
+/* Central container styling */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5; /* Added background color for consistency */
+}
+
+/* Main container with two columns */
+.login-container {
+  display: flex;
+  width: 80%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Left column with the form */
+.form-column {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Form header and styling */
+.form-column h1,
+.form-column h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.form-column p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Button styles */
+.google-button,
+.login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%; /* Set button width to 100% */
+  max-width: 400px; /* Optional: Limit the maximum width */
+  padding: 12px;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.google-button:hover,
+.login-button:hover {
+  background: #333; /* Darken on hover */
+}
+
+/* Divider for visual separation */
+.divider {
+  text-align: center;
+  color: #999;
+  margin: 20px 0;
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Input container styles */
+.input-container {
+  position: relative;
+}
+
+.form-group input,
+.password-container input {
+  width: 100%;
+  padding: 12px;
+  padding-right: 35px; /* Spacing for icon */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Password visibility toggle */
+.password-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.password-container span {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+  color: #888;
+}
+
+/* Form options styling */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.forgot-password {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Error and success messages */
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.success {
+  color: green;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Register link styling */
+.register-link {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
+
+.register-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Right column with background photo */
+.photo-column {
+  flex: 1;
+  background: url('../src/assets/login.jpg') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Changed to center align items */
+}
+
+
+/* Icon styling */
+.app-icon {
+  width: 40px;
+  height: 40px;
+}
+
+/* App name styling */
+.app-name {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: bold;
+}
