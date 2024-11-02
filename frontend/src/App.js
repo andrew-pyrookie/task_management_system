@@ -24,7 +24,9 @@ function App() {
               <Route path="/" element={<LoginPage />} />
               <Route path="/signup" element={<SignupPage />} />
               <Route path='/dashboard' element={<Dashboard />} />
-              <Route path='/calendar' element={<TaskCalendar />} />
+              <Route path='/notifications' element={<NotificationsPage />} />
+              <Route path='/tasks' element={<TaskList/>} />
+              <Route path='/calendar' element={<TaskCalendar/>} />
               {/* <Route
                 path="/dashboard"
                 element={
@@ -32,8 +34,8 @@ function App() {
                     <Dashboard />
                   </ProtectedRoute>
                 }
-              />
-              <Route
+              /> */}
+              {/* <Route
                 path="/tasks"
                 element={
                   <ProtectedRoute>
@@ -41,14 +43,14 @@ function App() {
                   </ProtectedRoute>
                 }
               /> */}
-              <Route
+              {/* <Route
                 path="/calendar"
                 element={
                   <ProtectedRoute>
                     <TaskCalendar />
                   </ProtectedRoute>
                 }
-              />
+              /> */}
               <Route
                 path="/search"
                 element={
